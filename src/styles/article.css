@@ -107,6 +107,7 @@ article {
   padding-right: 0.25em;
   font-family: consolas, serif;
   color: #c41020;
+  white-space: pre-wrap;
 }
 
 /* 블록 코드 */
