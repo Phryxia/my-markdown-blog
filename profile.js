@@ -28,7 +28,7 @@ function readdir(path) {
 
     const newPath = path + '/' + file.name;
 
-    const modifyTime = fs.statSync(newPath).mtime;
+    const modifyTime = fs.statSync(newPath).birthtime;
 
     if (file.isFile())
       out.files.push({path: newPath, modifyTime});
