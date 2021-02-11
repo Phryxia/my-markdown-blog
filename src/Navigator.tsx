@@ -58,20 +58,7 @@ const NavigatorEntry = (props) => {
   )
 };
 
-const Navigator = ({onStructureLoaded}) => {
-  const [structure, setStructure] = useState(null);
-
-  // navigation.json파일을 불러와서 구조를 적용시킨다.
-  useEffect(() => {
-    fetch('./navigation.json')
-    .then(response => response.json())
-    .then(json => {
-      setStructure(json as FolderNode);
-      onStructureLoaded(json as FolderNode);
-    })
-    .catch(err => console.log(err));
-  }, []);
-
+const Navigator = ({structure}) => {
   return (
     <nav className='general-box'>
       <NavigatorEntry folderNode={structure} />
