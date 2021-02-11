@@ -51,5 +51,44 @@ Set-Cookie: id=babo; Max-Age=3600;
 
 ```javascript
 const currentCookie = document.cookie;
+
+document.cookie = 'id=babo; Max-Age=3600;';
 ```
 
+이때 주의할 점은, key나 value에 들어갈 수 없는 문자가 있다는 것이다.
+
+- 공백 (ex: key=my word;)
+- 세미콜론 (ex: message=weird;;)
+- 콤마 (ex: coordinate=3,7;)
+
+이런 값을 넣어야 할 경우 `encodeURIComponent` 함수를 이용하여 변환을 거친 후 넣으면 된다. 반대로 변환된 문자열을 원상태로 복구하려면 `decodeURIComponent` 함수를 이용하면 된다.
+
+쿠키를 JavaScript로 조작할 때 주의할 점으로 다음과 같은 것들이 있다.
+
+- 크롬의 경우, 로컬 파일에서 쿠키 조작을 시도하면 이를 무시한다.
+- 너무 자주 쿠키를 설정하려고 할 경우, 비정상 작동하는 것이 보고된 적 있다. ([link](https://stackoverflow.com/a/36680074/3811223))
+
+
+
+## 쿠키 조작 라이브러리
+
+위에서 보듯 쿠키를 직접 문자열로 조작하는 것은 너무 버겁다는 것을 알 수 있다. 특히 어떤 값을 추가하거나 삭제하는 것이 너무 번거롭다.
+
+이를 위해 여러가지 라이브러리가 있으며, 그 중 괜찮은 라이브러리로 `js-cookie`([link](https://github.com/js-cookie/js-cookie))가 있다. 쿠키 라이브러리 중 가장 진보하고 고도화된 것이다.
+
+사용법을 맛만 보자면 다음과 같다.
+
+```javascript
+import Cookies from 'js-cookie';
+
+// 쿠키 설정
+Cookies.set('foo', 'bar');
+
+// 쿠키 조회
+Cookies.get('foo');
+
+// 특정 키 삭제
+Cookies.remove('foo');
+```
+
+관심이 있으면 깃허브 페이지를 방문해보자.
