@@ -5,6 +5,4 @@ import './styles/reset';
 import './styles/main';
 import './styles/article.css';
 
-console.log('hello world!');
-
 ReactDOM.render(<App />, document.querySelector('#root'));
