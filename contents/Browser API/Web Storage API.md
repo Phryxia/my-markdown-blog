@@ -59,7 +59,7 @@ window.addEventListener('storage', (event) => {
     console.log(`value ${event.oldValue} is changed to ${event.newValue} at ${event.storageArea}.`);
 });
 
-window.onsotrage = (event) => {
+window.onstorage = (event) => {
     ...
 }
 ```
