@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "build-dev": "webpack --config webpack.dev.js",
+    "build-and-profile": "webpack --config webpack.prod.js && node profile.js",
     "boot": "http-server .",
     "profile": "node profile.js"
   },
