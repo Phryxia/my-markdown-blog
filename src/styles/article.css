@@ -99,7 +99,7 @@ article {
 }
 
 /* 인라인 코드 */
-.content p code {
+.content code {
   background-color: whitesmoke;
   border-radius: 5px;
   border: 1px solid gray;
@@ -115,6 +115,13 @@ article {
   border-radius: 5px;
   border: 1px solid gray;
   padding: 10px;
+}
+
+.content pre code {
+  background-color: none;
+  border: none;
+  padding: 0;
+  color: unset;
 }
 
 /* 표 관련 */
