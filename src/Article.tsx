@@ -75,7 +75,7 @@ const Article = ({contentUrl, lastModified}) => {
         <h1>
           {extractTitleFromUrl(contentUrl)}
         </h1>
-        <span>by gfnuko {lastModified ? 'on ' + timeReformatting(lastModified) : null}</span>
+        <span>by nuko {lastModified ? 'on ' + timeReformatting(lastModified) : null}</span>
       </div>
 
       {/* Content */}
