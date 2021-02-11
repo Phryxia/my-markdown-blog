@@ -22,6 +22,10 @@ function readdir(path) {
     if (!file.isDirectory() && !file.name.match(/\.md$/))
       return;
 
+    // System 폴더는 숨긴다
+    if (file.name === 'System')
+      return;
+
     const newPath = path + '/' + file.name;
 
     const modifyTime = fs.statSync(newPath).mtime;
