@@ -163,3 +163,7 @@ article {
 .content .katex * {
   margin: unset;
 }
+
+sup, sub {
+  font-size: 0.7em;
+}
