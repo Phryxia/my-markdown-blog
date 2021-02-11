@@ -20,10 +20,10 @@ jekyll 쓰는 법을 배우는게 귀찮아서... 라기보단 바닥부터 블�
 
 ```
 npm i
-npm run build
+npm run build (또는 build-dev)
 ```
 
-새 글은 contents 폴더 밑에 자유롭게 추가한 뒤 다음 명령을 실행합니다. `netlify` 등의 서비스를 사용할 경우 빌드 명령어에 같이 추가해주시면 됩니다.
+새 글은 contents 폴더 밑에 자유롭게 추가한 뒤 다음 명령을 실행합니다.
 
 ```
 npm run profile
@@ -33,5 +33,11 @@ npm run profile
 
 ```
 npm run boot
+```
+
+netlify 등에 배포할 때는 원스탑 명령어로 빌드와 프로파일링을 동시에 합시다.
+
+```
+npm run build-and-profile
 ```
 
