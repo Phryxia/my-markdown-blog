@@ -18,6 +18,10 @@ function readdir(path) {
   const files = fs.readdirSync(path, {withFileTypes: true});
   
   files.forEach(file => {
+    // 폴더가 아니면서 마크다운 파일이 아닌 것은 무조건 넘긴다
+    if (!file.isDirectory() && !file.name.match(/\.md$/))
+      return;
+
     const newPath = path + '/' + file.name;
 
     const modifyTime = fs.statSync(newPath).mtime;
