@@ -44,6 +44,15 @@ nav {
 .navigator-file {
   background-color: white;
   border: 1px solid black;
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: unset;
 }
 
 /* 하위 항목 오프셋 주기 */

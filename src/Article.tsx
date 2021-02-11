@@ -56,16 +56,32 @@ const fetchHeader = new Headers();
 fetchHeader.append('pragma', 'no-cache');
 fetchHeader.append('cache-control', 'no-cache');
 
-const Article = ({contentUrl, lastModified}) => {
+const Article = ({contentUrl, lastModified, on404NotFound}) => {
+  // contentURL이 바뀌면 해당 URL로 마크다운을 로드한다.
+  // 만약 그런거 없으면 404 페이지를 열도록 App에게 재요청한다.
   useEffect(() => {
+    // 확장자가 .md가 아니면 불법접근으로 간주한다.
+    if (!contentUrl.match(/\.md$/)) {
+      on404NotFound();
+      return;
+    }
+
     // load file
     fetch(contentUrl, { headers: fetchHeader })
-    .then(response => response.text())
+    .then(response => {
+      if (response.ok)
+        return response.text();
+      else
+        // 404 에러
+        throw new Error('404 not found');
+    })
     .then(markdown => {
       const html = md.render(markdown);
       document.querySelector('#content').innerHTML = html;
     })
-    .catch(exception => console.log(exception));
+    .catch(exception => {
+      on404NotFound();
+    });
   }, [contentUrl]);
 
   return (
