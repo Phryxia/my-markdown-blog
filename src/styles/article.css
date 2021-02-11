@@ -98,27 +98,23 @@ article {
   font-size: 16px;
 }
 
-/* 코드 관련 */
-.content code {
+/* 인라인 코드 */
+.content p code {
   background-color: whitesmoke;
   border-radius: 5px;
   border: 1px solid gray;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
   font-family: consolas, serif;
+  color: #c41020;
 }
 
+/* 블록 코드 */
 .content pre {
   background-color: whitesmoke;
   border-radius: 5px;
   border: 1px solid gray;
   padding: 10px;
-}
-
-.content pre code {
-  background-color: none;
-  border: none;
-  padding: 0;
 }
 
 /* 표 관련 */
