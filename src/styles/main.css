@@ -1,0 +1,49 @@
+body {
+  background-color: #181717;
+}
+
+.general-box {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e7e6e6;
+  padding: 10px;
+}
+
+.app {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 네비게이션 배경 설정 */
+nav {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navigator-folder, .navigator-file {
+  width: min-content;
+  border-radius: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  cursor: pointer;
+}
+
+/* 폴더 버튼 */
+.navigator-folder {
+  background-color: cornsilk;
+  border: 1px solid black;
+}
+
+/* 파일 버튼 */
+.navigator-file {
+  border: 1px solid #c41020;
+}
+
+/* 하위 항목 오프셋 주기 */
+.navigator-entry {
+  padding-left: 1em;
+}
