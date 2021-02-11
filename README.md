@@ -29,3 +29,9 @@ npm run build
 npm run profile
 ```
 
+로컬 테스트를 할 땐 다음의 명령어를 입력한 뒤, 브라우저에서 localhost:8080으로 접속하시면 됩니다. (http-server 설치 필요)
+
+```
+npm run boot
+```
+
