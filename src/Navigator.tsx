@@ -28,6 +28,8 @@ const NavigatorEntry = (props) => {
 
   const toggle = useCallback(() => setIsOpen(isOpen => !isOpen));
 
+  const onFileClick = useCallback(() => window.scrollTo({ top: 0, behavior: 'smooth' }))
+
   return (
     <div>
       {folderNode ? 
@@ -40,7 +42,7 @@ const NavigatorEntry = (props) => {
           {/* 파일 버튼들 */}
           {isOpen ? folderNode.files.map(filenode =>
             <a href={'#' + filenode.path.substring(1)} key={filenode.path}>
-              <div className='navigator-file'>
+              <div className='navigator-file' onClick={onFileClick}>
                 {/* 파일 이름만 추출해서 보여준다 */}
                 {extractTitleFromUrl(filenode.path)}
               </div>
